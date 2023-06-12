@@ -1,9 +1,13 @@
 #!/usr/bin/node
-const myVar = process.argv.length;
-if (myVar <= 3) {
-  console.log(0);
+
+if (process.argv.length < 4) {
+  console.log('0');
 } else {
-  const args = process.argv.slice(2).map(x => parseInt(x));
-  const sorted = args.sort((a, b) => a < b);
-  console.log(sorted[1]);
+  const args = [];
+
+  for (let i = 2; i < process.argv.length; i++) {
+    args[i - 2] = process.argv[i];
+  }
+  args.sort(function (a, b) { return b - a; });
+  console.log(args[1]);
 }
