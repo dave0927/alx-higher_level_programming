@@ -1,26 +1,22 @@
 #!/usr/bin/python3
-
 '''
-filter states
+get all states module
 '''
 
-import sys
 import MySQLdb
+from sys import argv
+
 
 if __name__ == "__main__":
     HOST = 'localhost'
-    DBUSER = sys.argv[1]
-    DBPASS = sys.argv[2]
-    DBNAME = sys.argv[3]
-    PORT = 3306
+    USER = argv[1]
+    PASSWD = argv[2]
+    DB = argv[3]
 
-    db = MySQLdb.connect(HOST, PORT, DBUSER, DBPASS, DBNAME)
+    db = MySQLdb.connect(HOST, USER, PASSWD, DB)
     cur = db.cursor()
 
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
     states = cur.fetchall()
     for state in states:
         print(state)
-
-    cur.close()
-    db.close()
