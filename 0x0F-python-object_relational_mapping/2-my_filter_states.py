@@ -22,8 +22,12 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE \
-                name='{:s}' ORDER BY id ASC".format(argv[4]))
+    sql = """ SELECT * FROM states WHERE
+                name LIKE BINARY '{}'
+                ORDER BY id ASC """.format(argv[4])
+
+    cur.execute(sql)
     states = cur.fetchall()
+
     for state in states:
         print(state)
