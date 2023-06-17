@@ -9,11 +9,11 @@ import MySQLdb
 
 if __name__ == "__main__":
     HOST = 'localhost'
-    DB_USER = sys.argv[1]
-    DB_PASS = sys.argv[2]
-    DB_NAME = sys.argv[3]
+    DBUSER = sys.argv[1]
+    DBPASS = sys.argv[2]
+    DBNAME = sys.argv[3]
 
-    db = MySQLdb.connect(HOST, DB_USER, DB_PASS, DB_NAME)
+    db = MySQLdb.connect(HOST, DBUSER, DBPASS, DBNAME)
     cur = db.cursor()
 
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
