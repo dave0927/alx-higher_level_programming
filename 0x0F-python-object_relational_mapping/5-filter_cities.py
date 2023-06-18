@@ -16,11 +16,12 @@ if __name__ == "__main__":
                          port=3306)
 
     cur = db.cursor()
-    sql = """SELECT cities.name
-            FROM states
-            INNER JOIN cities ON states.id = cities.state_id
-            WHERE states.name = %s
-            ORDER BY cities.id ASC"""
+    sql = """
+        SELECT cities.name
+        FROM states
+        INNER JOIN cities ON states.id=cities.state_id
+        WHERE states.name = %s
+        ORDER BY cities.id ASC"""
 
     cur.execute(sql, (argv[4],))
 
