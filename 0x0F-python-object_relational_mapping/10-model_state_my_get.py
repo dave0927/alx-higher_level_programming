@@ -18,11 +18,10 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     session = Session()
-    states = session.query(State) \
-                    .filter(State.name == argv[4]).first()
+    states = session.query(State).filter(State.name == argv[4]).first()
 
     if states:
-        print(states.id)
+        print('{}'.format(states.id))
     else:
         print("Not Found")
 
