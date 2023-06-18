@@ -8,12 +8,6 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    HOST = 'localhost'
-    USER = argv[1]
-    PASSWD = argv[2]
-    DB = argv[3]
-    state_name = argv[4]
-
     db = MySQLdb.connect(user=argv[1],
                          passwd=argv[2],
                          db=argv[3],
