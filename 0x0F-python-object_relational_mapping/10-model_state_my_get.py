@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     session = Session()
     states = session.query(State) \
-                    .filter(State.name == argv[4]).one_or_none()
+                    .filter(State.name == argv[4]).first()
 
     if states is None:
         print("Not Found")
