@@ -18,8 +18,8 @@ if __name__ == "__main__":
                          port=3306)
 
     cur = db.cursor()
-    sql = """SELECT * FROM states 
-            WHERE name = %s 
+    sql = """SELECT * FROM states
+            WHERE name = %s
             ORDER BY id ASC"""
 
     cur.execute(sql, (argv[4],))
@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     for state in states:
         print(state)
-    
+
     cur.close()
     db.close()
