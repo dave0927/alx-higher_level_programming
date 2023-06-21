@@ -24,4 +24,4 @@ if __name__ == "__main__":
     if states is None:
         print("Not found")
     else:
-        print('{}'.format(states.id))
+        print(states.id)
