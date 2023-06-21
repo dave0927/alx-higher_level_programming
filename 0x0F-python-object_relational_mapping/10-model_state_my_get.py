@@ -22,6 +22,6 @@ if __name__ == "__main__":
                     .filter(State.name == argv[4]).first()
 
     if states is None:
-        print("Not Found")
+        print("Not found")
     else:
         print('{}'.format(states.id))
