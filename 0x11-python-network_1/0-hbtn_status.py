@@ -9,7 +9,8 @@ def status():
         body = response.read()
         convert = body.decode('utf-8')
         print('Body response:\n\t- type: {}'.format(type(body)))
-        print('\t- content: {}\n\t- utf8 content: {}' . format(body, convert, end=''))
+        print('\t- content: {}\n\t- utf8 content: {}'
+              .format(body, convert, end=''))
 
 
 if __name__ == '__main__':
